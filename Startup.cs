@@ -1,9 +1,13 @@
 using System.Diagnostics.CodeAnalysis;
 using System.Text.Json.Serialization;
-using DoctorAppointmentBooking.DataAccess;
-using DoctorAppointmentBooking.Services;
-using Microsoft.Data.Sqlite;
-using Microsoft.EntityFrameworkCore;
+using DoctorAppointmentBooking.AppointmentBooking.DataAccess;
+using DoctorAppointmentBooking.AppointmentBooking.UseCases;
+using DoctorAppointmentBooking.AppointmentConfirmation.Services;
+using DoctorAppointmentBooking.DoctorAppointmentManagement.DataAccess;
+using DoctorAppointmentBooking.DoctorAppointmentManagement.Services;
+using DoctorAppointmentBooking.DoctorAvailability.DataAccess;
+using DoctorAppointmentBooking.DoctorAvailability.Services;
+using DoctorDbContext = DoctorAppointmentBooking.DoctorAvailability.DataAccess.DoctorDbContext;
 
 namespace DoctorAppointmentBooking
 {
@@ -39,11 +43,29 @@ namespace DoctorAppointmentBooking
                     options.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter());
                 });
             services.AddHealthChecks();
+
+            //Doctor Availability Setup :  Case 1
+
             services.AddScoped<DoctorAvailabilityService>();
             services.AddScoped<DoctorAppointmentRepository>();
+            services.AddDbContext<DoctorDbContext>();
+
+            //Confirm Appointment Setup : Case 3
+            services.AddScoped<ConfirmAppointmentService>();
+            services.AddScoped<NotificationService>();
+
+            //Doctor Appointment Management Setup : Case 4
             services.AddScoped<IDoctorAppointmentManagementRepository, DoctorAppointmentManagementRepository>();
             services.AddScoped<IDoctorAppointmentManagementService, DoctorAppointmentManagementService>();
-            services.AddDbContext<DoctorDbContext>();
+            services.AddDbContext<DoctorAppointmentManagement.DataAccess.AppointmentDbContext>();
+
+            
+            //Appointment Booking Setup :  Case 2
+            services.AddScoped<IAppointmentBookingRepository, AppointmentBookingRepository>();
+            services.AddScoped<BookAppointmentUseCase>();
+            services.AddScoped<ViewDoctorAvailableSlotsUseCase>();
+            services.AddDbContext<AppointmentBooking.DataAccess.DoctorDbContext>();
+            services.AddDbContext<AppointmentBooking.DataAccess.AppointmentDbContext>();
         }
 
         /// <summary>

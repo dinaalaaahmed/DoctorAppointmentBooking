@@ -1,8 +1,8 @@
-using DoctorAppointmentBooking.Models;
+using DoctorAppointmentBooking.DoctorAvailability.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace DoctorAppointmentBooking.DataAccess;
+namespace DoctorAppointmentBooking.DoctorAvailability.DataAccess;
 
 public class DoctorAppointmentConfiguration : IEntityTypeConfiguration<DoctorSlot>
 {

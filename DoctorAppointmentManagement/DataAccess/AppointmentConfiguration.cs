@@ -1,14 +1,14 @@
-using DoctorAppointmentBooking.Models;
+using DoctorAppointmentBooking.DoctorAppointmentManagement.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace DoctorAppointmentBooking.DataAccess;
+namespace DoctorAppointmentBooking.DoctorAppointmentManagement.DataAccess;
 
-public class DoctorAppointmentManagementConfiguration : IEntityTypeConfiguration<Appointment>
+public class AppointmentConfiguration : IEntityTypeConfiguration<Appointment>
 {
     public void Configure(EntityTypeBuilder<Appointment> builder)
     {
-        builder.ToTable("doctor_appointment_management").HasKey(e => e.Id);
+        builder.ToTable("appointment").HasKey(e => e.Id);
 
         builder.Property(e => e.Id).HasColumnName("id").IsRequired();
         builder.Property(e => e.SlotId).HasColumnName("slot_id").IsRequired();

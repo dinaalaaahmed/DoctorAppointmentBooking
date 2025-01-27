@@ -1,11 +1,10 @@
-using System.ComponentModel.DataAnnotations;
 using System.Net;
-using DoctorAppointmentBooking.Models;
-using DoctorAppointmentBooking.Requests;
-using DoctorAppointmentBooking.Services;
+using DoctorAppointmentBooking.DoctorAvailability.Models;
+using DoctorAppointmentBooking.DoctorAvailability.Requests;
+using DoctorAppointmentBooking.DoctorAvailability.Services;
 using Microsoft.AspNetCore.Mvc;
 
-namespace DoctorAppointmentBooking.Controllers;
+namespace DoctorAppointmentBooking.DoctorAvailability.Controllers;
 
 public class DoctorAvailabilityController(DoctorAvailabilityService service) : Controller
 {

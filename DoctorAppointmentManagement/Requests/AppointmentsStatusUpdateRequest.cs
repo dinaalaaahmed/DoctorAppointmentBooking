@@ -1,6 +1,6 @@
 using System.Text.Json.Serialization;
 
-namespace DoctorAppointmentBooking.Requests;
+namespace DoctorAppointmentBooking.DoctorAppointmentManagement.Requests;
 
 public class AppointmentsStatusUpdateRequest
 {

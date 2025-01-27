@@ -1,12 +1,13 @@
 using System.Net;
-using DoctorAppointmentBooking.Models;
-using DoctorAppointmentBooking.Requests;
-using DoctorAppointmentBooking.Services;
+using DoctorAppointmentBooking.DoctorAppointmentManagement.Models;
+using DoctorAppointmentBooking.DoctorAppointmentManagement.Requests;
+using DoctorAppointmentBooking.DoctorAppointmentManagement.Services;
+using DoctorAppointmentBooking.DoctorAvailability.Models;
 using Microsoft.AspNetCore.Mvc;
 
-namespace DoctorAppointmentBooking.Controllers;
+namespace DoctorAppointmentBooking.DoctorAppointmentManagement.Controllers;
 
-public class DoctorAppointmentManagementController(DoctorAppointmentManagementService service) : Controller
+public class DoctorAppointmentManagementController(IDoctorAppointmentManagementService service) : Controller
 {
     [HttpGet("{doctorId:Guid}/doctor-appointments")]
     [ProducesResponseType((int)HttpStatusCode.OK, Type = typeof(List<Appointment>))]

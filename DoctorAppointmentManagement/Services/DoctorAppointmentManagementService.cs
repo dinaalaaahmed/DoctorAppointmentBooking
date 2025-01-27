@@ -1,7 +1,7 @@
-using DoctorAppointmentBooking.DataAccess;
-using DoctorAppointmentBooking.Models;
+using DoctorAppointmentBooking.DoctorAppointmentManagement.DataAccess;
+using DoctorAppointmentBooking.DoctorAppointmentManagement.Models;
 
-namespace DoctorAppointmentBooking.Services;
+namespace DoctorAppointmentBooking.DoctorAppointmentManagement.Services;
 
 public class DoctorAppointmentManagementService(IDoctorAppointmentManagementRepository repository) : IDoctorAppointmentManagementService
 {

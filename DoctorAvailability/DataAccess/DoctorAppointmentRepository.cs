@@ -1,8 +1,6 @@
-using DoctorAppointmentBooking.Models;
-using Microsoft.EntityFrameworkCore;
+using DoctorAppointmentBooking.DoctorAvailability.Models;
 
-
-namespace DoctorAppointmentBooking.DataAccess;
+namespace DoctorAppointmentBooking.DoctorAvailability.DataAccess;
 
 public class DoctorAppointmentRepository(DoctorDbContext dbContext)
 {
