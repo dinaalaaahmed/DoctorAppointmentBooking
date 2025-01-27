@@ -13,8 +13,6 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="AppointmentConfirmation\DataAccess\" />
-      <Folder Include="AppointmentConfirmation\Models\" />
       <Folder Include="DoctorAppointmentManagement\" />
     </ItemGroup>
 </Project>

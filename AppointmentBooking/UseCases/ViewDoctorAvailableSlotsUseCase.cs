@@ -1,6 +1,5 @@
 using DoctorAppointmentBooking.AppointmentBooking.DataAccess;
-using DoctorAppointmentBooking.DoctorAvailability.Models;
-using DoctorSlot = DoctorAppointmentBooking.AppointmentBooking.Models.DoctorSlot;
+using DoctorAppointmentBooking.AppointmentBooking.Models;
 
 namespace DoctorAppointmentBooking.AppointmentBooking.UseCases;
 

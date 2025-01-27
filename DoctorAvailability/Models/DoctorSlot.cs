@@ -1,5 +1,3 @@
-using DoctorAppointmentBooking.DoctorAppointmentManagement.Models;
-
 namespace DoctorAppointmentBooking.DoctorAvailability.Models;
 
 public class DoctorSlot
@@ -10,6 +8,4 @@ public class DoctorSlot
     public string DoctorName { set; get; }
     public bool IsReserved { set; get; }
     public decimal Cost { set; get; }
-    
-    public Appointment Appointment { get; set; } // One-to-One relationship
 }
