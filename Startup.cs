@@ -2,6 +2,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Text.Json.Serialization;
 using DoctorAppointmentBooking.AppointmentBooking.DataAccess;
 using DoctorAppointmentBooking.AppointmentBooking.UseCases;
+using DoctorAppointmentBooking.AppointmentConfirmation.Services;
 
 namespace DoctorAppointmentBooking
 {
@@ -37,6 +38,11 @@ namespace DoctorAppointmentBooking
                     options.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter());
                 });
             services.AddHealthChecks();
+
+            //Confirm Appointment Setup : Case 3
+            services.AddScoped<ConfirmAppointmentService>();
+            services.AddScoped<NotificationService>();
+
 
             //Appointment Booking Setup :  Case 2
             services.AddScoped<IAppointmentBookingRepository, AppointmentBookingRepository>();

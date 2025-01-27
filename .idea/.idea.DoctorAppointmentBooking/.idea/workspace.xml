@@ -8,7 +8,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a5daba41-c3a9-426a-82f2-818abefc7a6d" name="Changes" comment="add configuration file" />
+    <list default="true" id="a5daba41-c3a9-426a-82f2-818abefc7a6d" name="Changes" comment="add configuration file">
+      <change beforePath="$PROJECT_DIR$/Startup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Startup.cs" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -166,7 +168,7 @@
       <workItem from="1737317055516" duration="13066000" />
       <workItem from="1737706955512" duration="5816000" />
       <workItem from="1737931763468" duration="7839000" />
-      <workItem from="1737982447039" duration="3555000" />
+      <workItem from="1737982447039" duration="3641000" />
     </task>
     <task id="LOCAL-00001" summary="add doctor availability">
       <option name="closed" value="true" />
