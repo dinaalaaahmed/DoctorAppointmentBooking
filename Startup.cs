@@ -58,8 +58,8 @@ namespace DoctorAppointmentBooking
             services.AddScoped<IDoctorAppointmentManagementRepository, DoctorAppointmentManagementRepository>();
             services.AddScoped<IDoctorAppointmentManagementService, DoctorAppointmentManagementService>();
             services.AddDbContext<DoctorAppointmentManagement.DataAccess.AppointmentDbContext>();
+            services.AddDbContext<DoctorAppointmentManagement.DataAccess.DoctorDbContext>();
 
-            
             //Appointment Booking Setup :  Case 2
             services.AddScoped<IAppointmentBookingRepository, AppointmentBookingRepository>();
             services.AddScoped<BookAppointmentUseCase>();

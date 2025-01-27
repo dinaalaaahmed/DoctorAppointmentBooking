@@ -2,7 +2,6 @@ using System.Net;
 using DoctorAppointmentBooking.DoctorAppointmentManagement.Models;
 using DoctorAppointmentBooking.DoctorAppointmentManagement.Requests;
 using DoctorAppointmentBooking.DoctorAppointmentManagement.Services;
-using DoctorAppointmentBooking.DoctorAvailability.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace DoctorAppointmentBooking.DoctorAppointmentManagement.Controllers;

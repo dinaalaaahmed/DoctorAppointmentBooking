@@ -1,6 +1,3 @@
-
-using DoctorAppointmentBooking.DoctorAvailability.Models;
-
 namespace DoctorAppointmentBooking.DoctorAppointmentManagement.Models;
 
 public class Appointment
