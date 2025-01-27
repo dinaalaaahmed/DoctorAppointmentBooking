@@ -3,6 +3,8 @@ using System.Text.Json.Serialization;
 using DoctorAppointmentBooking.AppointmentBooking.DataAccess;
 using DoctorAppointmentBooking.AppointmentBooking.UseCases;
 using DoctorAppointmentBooking.AppointmentConfirmation.Services;
+using DoctorAppointmentBooking.DoctorAppointmentManagement.DataAccess;
+using DoctorAppointmentBooking.DoctorAppointmentManagement.Services;
 
 namespace DoctorAppointmentBooking
 {
@@ -43,6 +45,11 @@ namespace DoctorAppointmentBooking
             services.AddScoped<ConfirmAppointmentService>();
             services.AddScoped<NotificationService>();
 
+            //Doctor Appointment Management Setup : Case 4
+            services.AddScoped<IDoctorAppointmentManagementRepository, DoctorAppointmentManagementRepository>();
+            services.AddScoped<IDoctorAppointmentManagementService, DoctorAppointmentManagementService>();
+            services.AddDbContext<DoctorAppointmentManagement.DataAccess.AppointmentDbContext>();
+            services.AddDbContext<DoctorAppointmentManagement.DataAccess.DoctorDbContext>();
 
             //Appointment Booking Setup :  Case 2
             services.AddScoped<IAppointmentBookingRepository, AppointmentBookingRepository>();
