@@ -5,6 +5,8 @@ using DoctorAppointmentBooking.AppointmentBooking.UseCases;
 using DoctorAppointmentBooking.AppointmentConfirmation.Services;
 using DoctorAppointmentBooking.DoctorAppointmentManagement.DataAccess;
 using DoctorAppointmentBooking.DoctorAppointmentManagement.Services;
+using DoctorAppointmentBooking.DoctorAvailability.DataAccess;
+using DoctorAppointmentBooking.DoctorAvailability.Services;
 
 namespace DoctorAppointmentBooking
 {
@@ -40,6 +42,12 @@ namespace DoctorAppointmentBooking
                     options.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter());
                 });
             services.AddHealthChecks();
+
+            //Doctor Availability Setup :  Case 1
+
+            services.AddScoped<DoctorAvailabilityService>();
+            services.AddScoped<DoctorAppointmentRepository>();
+            services.AddDbContext<DoctorAvailability.DataAccess.DoctorDbContext>();
 
             //Confirm Appointment Setup : Case 3
             services.AddScoped<ConfirmAppointmentService>();
